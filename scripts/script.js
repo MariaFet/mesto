@@ -1,6 +1,6 @@
-let editButton = document.querySelector('.profile__button_type_edit');
+let editButton = document.querySelector('.profile__button-edit');
 let popup = document.querySelector('.popup');
-let closeButton = document.querySelector('.popup__button_type_close');
+let closeButton = document.querySelector('.popup__button-close');
 editButton.addEventListener('click', () => {
   popup.classList.add('popup_opened');
 });
@@ -20,7 +20,7 @@ function handleFormSubmit (evt) {
     profileJob.textContent = jobInput.value;
 };
 formElement.addEventListener('submit', handleFormSubmit);
-let submitButton = formElement.querySelector('.popup__button_type_submit');
+let submitButton = formElement.querySelector('.popup__button-submit');
 submitButton.addEventListener('click', () => {
   popup.classList.remove('popup_opened');
 });
