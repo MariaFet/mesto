@@ -1,0 +1,16 @@
+.element__button-like {
+  padding: 0;
+  border: 0;
+  width: 22px;
+  min-height: 19px;
+  background-image: url(../../../images/heart-empty.svg);
+  background-color: white;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  align-self: center;
+  margin-right: 20px;
+}
+
+.element__button-like:hover {
+  opacity: 0.5;
+}
