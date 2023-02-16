@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 880px;
   min-width: 320px;
-  padding: 45px 200px 40px;
+  padding: 45px calc((100% - 880px) / 2) 40px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
