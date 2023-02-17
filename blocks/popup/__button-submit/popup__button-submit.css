@@ -10,13 +10,13 @@
   line-height: 22px;
   text-align: center;
   color: #FFFFFF;
-  width: 358px;
+  width: 100%;
   min-height: 50px;
+  cursor: pointer;
 }
 
-@media screen and (min-width: 320px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .popup__button-submit {
-    width: 238px;
     min-height: 46px;
     font-size: 14px;
     line-height: 17px;
