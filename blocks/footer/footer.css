@@ -11,3 +11,11 @@
     box-sizing: border-box;
   }
 }
+
+@media screen and (min-width: 769px) and (max-width: 890px) {
+  .footer {
+    margin-right: 19px;
+    margin-left: 19px;
+    width: calc(100% - 38px);
+  }
+}

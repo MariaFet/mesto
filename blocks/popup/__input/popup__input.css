@@ -1,7 +1,5 @@
-.popup__job {
+.popup__input {
   margin: 0;
-  margin-top: 27px;
-  margin-bottom: 45px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -10,12 +8,7 @@
   border: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0;
-  height: 27px;
   width: 100%;
-}
-
-@media screen and (max-width: 768px) {
-  .popup__job {
-    margin-bottom: 45px;
-  }
+  padding-bottom: 10px;
+  box-sizing: border-box;
 }
