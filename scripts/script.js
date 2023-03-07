@@ -21,13 +21,14 @@ editButton.addEventListener('click', (evt) => {
 });
 
 //закрытие попапа
-function closePopup (evt) {
-  evt.target.closest('.popup').classList.remove('popup_opened');
-};
+function closePopup (popupToClose) { 
+  popupToClose.classList.remove('popup_opened'); 
+}; 
+
 const closeButtons = Array.from(document.querySelectorAll('.popup__button-close'));
 closeButtons.forEach((button) => {
   button.addEventListener('click', (evt) => {
-    closePopup(evt);
+    closePopup(evt.target.closest('.popup'));
   });
 });
 
@@ -36,7 +37,7 @@ function handleFormSubmit (evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
-    closePopup(evt);
+    closePopup(popupProfile);
 };
 formElement.addEventListener('submit', handleFormSubmit);
 
@@ -49,7 +50,7 @@ function initCardDelete (card) {
 };
 
 //лайк
-function makeLike (card) {
+function initMakeLike (card) {
   const likeButton = card.querySelector('.element__button-like');
   likeButton.addEventListener('click', (evt) => {
     evt.target.classList.toggle('element__button-like_active');
@@ -57,7 +58,7 @@ function makeLike (card) {
 };
 
 //просмотр изображений
-function openImage (card) {
+function initOpenCardImage (card) {
   const cardImage = card.querySelector('.element__image');
   const zoomedImage = document.querySelector('.popup__image');
   const imageName = document.querySelector('.popup__image-description');
@@ -111,8 +112,8 @@ function createCard (card) {
   newCardImage.src = card.link;
   newCardImage.alt = card.alt;
   initCardDelete(newCard);
-  makeLike(newCard);
-  openImage(newCard);
+  initMakeLike(newCard);
+  initOpenCardImage(newCard);
   return newCard;
 };
 const cardsContainer = document.querySelector('.elements');
@@ -134,6 +135,6 @@ function handlePlaceFormSubmit (evt) {
     alt: placeInput.value,
   };
   cardsContainer.prepend(createCard(card));
-  closePopup(evt);
+  closePopup(popupPlace);
 }
 popupPlace.addEventListener('submit', handlePlaceFormSubmit);
