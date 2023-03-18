@@ -11,6 +11,16 @@ const popupImage = document.querySelector('.popup_type_image');
 //открытие попапа
 function openPopup (popupToOpen) {
   popupToOpen.classList.add('popup_opened');
+  document.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Escape') {
+      closePopup(popupToOpen);
+    }
+  });
+  document.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup')) {
+      closePopup(popupToOpen);
+    }
+  });
 };
 
 //кнопка изменения профиля
