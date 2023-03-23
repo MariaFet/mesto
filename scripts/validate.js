@@ -1,6 +1,6 @@
 //отображение ошибки
 function showInputError (form, input, config, errorMessage) {
-  const inputError = form.querySelector(`.${input.id}-error`);
+  const inputError = form.querySelector(`.popup__error_type_${input.name}`);
   input.classList.add(config.inputErrorClass);
   inputError.classList.add(config.errorClass);
   inputError.textContent = errorMessage;
@@ -8,7 +8,7 @@ function showInputError (form, input, config, errorMessage) {
 
 //скрытие ошибки
 function hideInputError (form, input, config) {
-  const inputError = form.querySelector(`.${input.id}-error`);
+  const inputError = form.querySelector(`.popup__error_type_${input.name}`);
   input.classList.remove(config.inputErrorClass);
   inputError.classList.remove(config.errorClass);
   inputError.textContent = '';
