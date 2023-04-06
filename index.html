@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <title>Mesto Russia</title>
     <link rel="stylesheet" href="./pages/index.css">
-    <script defer src="./scripts/script.js"></script>
-    <script defer src="./scripts/validate.js"></script>
+    <script defer type="module" src="./scripts/script.js"></script>
+    <script defer type="module" src="./scripts/FormValidator.js"></script>
+    <script defer type="module" src="./scripts/Card.js"></script>
+    <script defer type="module" src="./scripts/constants.js"></script>
   </head>
   <body class="page">
     <header class="header">
@@ -30,7 +32,7 @@
     <section class="popup popup_type_profile">
       <div class="popup__container popup__container_type_edit-profile">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form" action="URL" method="get" name="popupForm" novalidate>
+        <form class="popup__form popup__form_type_profile" action="URL" method="get" name="popupForm" novalidate>
           <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Введите имя" required minlength="2" maxlength="40">
           <span class="popup__error popup__error_type_name"></span>
           <input type="text" name="job" class="popup__input popup__input_type_job" placeholder="Введите профессию" required minlength="2" maxlength="200">
@@ -43,7 +45,7 @@
     <section class="popup popup_type_place">
       <div class="popup__container popup__container_type_add-place">
         <h2 class="popup__title">Новое место</h2>
-        <form class="popup__form" action="URL" method="get" name="popupForm" novalidate>
+        <form class="popup__form popup__form_type_place" action="URL" method="get" name="popupForm" novalidate>
           <input type="text" name="place" class="popup__input popup__input_type_place" placeholder="Название" required minlength="2" maxlength="30">
           <span class="popup__error popup__error_type_place"></span>
           <input type="url" name="link" class="popup__input popup__input_type_link" placeholder="Ссылка на картинку" required>
