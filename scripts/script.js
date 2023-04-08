@@ -65,10 +65,15 @@ function handleFormSubmit (evt) {
 formProfile.addEventListener('submit', handleFormSubmit);
 
 //добавление исходных карточек
-initialCards.forEach((item) => {
-  const card = new Card(item, ('#card-template'));
+
+function createCard (item, cardTemplate) {
+  const card = new Card(item, cardTemplate);
   const newCard = card.generateCard();
-  cardsContainer.append(newCard);
+  return newCard;
+};
+
+initialCards.forEach((cardData) => {
+  cardsContainer.append(createCard(cardData, ('#card-template')));
 });
 
 //добавление новых карточек
@@ -83,8 +88,7 @@ function handlePlaceFormSubmit (evt) {
     name: placeInput.value,
     link: linkInput.value
   };
-  const card = new Card(addedCard, ('#card-template'));
-  const newCard = card.generateCard();
+  const newCard = createCard(addedCard, ('#card-template'));
   cardsContainer.prepend(newCard);
   closePopup(popupPlace);
   placeInput.value = '';
@@ -93,7 +97,6 @@ function handlePlaceFormSubmit (evt) {
 const formPlace = popupPlace.querySelector('.popup__form');
 formPlace.addEventListener('submit', handlePlaceFormSubmit);
 
-
 const config = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
@@ -101,12 +104,12 @@ const config = {
   submitButtonSelector: '.popup__button-submit',
   inactiveButtonClass: 'popup__button-submit_disabled',
   inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
+  errorClass: 'popup__error_visible',
 };
 
 //включение валидации форм
-const ProfileFormValidator = new FormValidator(config, formProfile);
-ProfileFormValidator.enableValidation();
+const profileFormValidator = new FormValidator(config, formProfile);
+profileFormValidator.enableValidation();
 
-const PlaceFormValidator = new FormValidator( config, formPlace);
-PlaceFormValidator.enableValidation();
+const placeFormValidator = new FormValidator( config, formPlace);
+placeFormValidator.enableValidation();

@@ -2,6 +2,7 @@ import {openPopup} from './script.js';
 const popupImage = document.querySelector('.popup_type_image');
 const zoomedImage = document.querySelector('.popup__image');
 const imageName = document.querySelector('.popup__image-description');
+ 
 
 export class Card {
   constructor (data, selector) {
@@ -17,19 +18,24 @@ export class Card {
 
   generateCard () {
     this._cardElement = this._getCardTemplate();
-    this._cardElement.querySelector('.element__title').textContent = this._name;
-    this._cardElement.querySelector('.element__image').alt = this._name;
-    this._cardElement.querySelector('.element__image').src = this._link;
+    this._cardImage = this._cardElement.querySelector('.element__image');
+    this._buttonDelete = this._cardElement.querySelector('.element__button-delete');
+    this._buttonLike = this._cardElement.querySelector('.element__button-like');
+    this._cardName = this._cardElement.querySelector('.element__title');
+    this._cardName.textContent = this._name;
+    this._cardImage.alt = this._name;
+    this._cardImage.src = this._link;
     this._setEventListeners();
     return this._cardElement;
   }
 
   _deleteCard () {
     this._cardElement.remove();
+    this._cardElement = null;
   }
 
   _toggleLike () {
-    this._cardElement.querySelector('.element__button-like').classList.toggle('element__button-like_active');
+    this._buttonLike.classList.toggle('element__button-like_active');
   }
 
   _openCardImage () {
@@ -40,13 +46,13 @@ export class Card {
   }
 
   _setEventListeners() {
-    this._cardElement.querySelector('.element__button-delete').addEventListener('click', () => {
+    this._buttonDelete.addEventListener('click', () => {
       this._deleteCard();
     });
-    this._cardElement.querySelector('.element__button-like').addEventListener('click', () => {
+    this._buttonLike.addEventListener('click', () => {
       this._toggleLike();
     });
-    this._cardElement.querySelector('.element__image').addEventListener('click', () => {
+    this._cardImage.addEventListener('click', () => {
       this._openCardImage();
     });
   }
