@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <title>Mesto Russia</title>
-    <link rel="stylesheet" href="./pages/index.css">
-    <script defer type="module" src="./scripts/script.js"></script>
   </head>
   <body class="page">
     <header class="header">
-      <img class="header__logo" alt="Логотип Mesto Russia" src="./images/logo.svg">
+      <img class="header__logo" alt="Логотип Mesto Russia" src="<%=require('./images/logo.svg')%>">
     </header>
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" alt="Аватар пользователя" src="./images/kusto.png">
+        <img class="profile__avatar" alt="Аватар пользователя" src="<%=require('./images/kusto.png')%>">
         <div class="profile__info">
           <div class="profile__box">
             <h1 class="profile__name">Жак-Ив Кусто</h1>

@@ -1,14 +1,9 @@
-import {openPopup} from './script.js';
-const popupImage = document.querySelector('.popup_type_image');
-const zoomedImage = document.querySelector('.popup__image');
-const imageName = document.querySelector('.popup__image-description');
- 
-
 export class Card {
-  constructor (data, selector) {
+  constructor (data, { handleCardClick }, selector) {
     this._name = data.name;
     this._link = data.link;
     this._selector = selector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getCardTemplate () {
@@ -38,12 +33,12 @@ export class Card {
     this._buttonLike.classList.toggle('element__button-like_active');
   }
 
-  _openCardImage () {
+  /*_openCardImage () {
     openPopup(popupImage);
     zoomedImage.src = this._link;
     zoomedImage.alt = this._name;
     imageName.textContent = this._name;
-  }
+  }*/
 
   _setEventListeners() {
     this._buttonDelete.addEventListener('click', () => {
@@ -53,7 +48,8 @@ export class Card {
       this._toggleLike();
     });
     this._cardImage.addEventListener('click', () => {
-      this._openCardImage();
+      this._handleCardClick(this._name, this._link);
     });
+
   }
 };
