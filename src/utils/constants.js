@@ -33,3 +33,12 @@ export const jobInput = formProfile.querySelector('.popup__input_type_job');
 export const addButton = document.querySelector('.profile__button-add');
 export const popupPlace = document.querySelector('.popup_type_place');
 export const formPlace = popupPlace.querySelector('.popup__form');
+export const config = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  input: 'popup__input',
+  submitButtonSelector: '.popup__button-submit',
+  inactiveButtonClass: 'popup__button-submit_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible',
+};

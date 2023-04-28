@@ -5,7 +5,7 @@ import {Section} from '../components/Section.js';
 import {PopupWithImage} from '../components/PopupWithImage.js';
 import {PopupWithForm} from '../components/PopupWithForm.js';
 import {UserInfo} from '../components/UserInfo.js';
-import {initialCards, editButton, formProfile, nameInput, jobInput, addButton, formPlace} from '../utils/constants.js';
+import {initialCards, editButton, formProfile, nameInput, jobInput, addButton, formPlace, config} from '../utils/constants.js';
 import {FormValidator} from '../components/FormValidator.js';
 
 //создание карточки
@@ -51,15 +51,6 @@ editButton.addEventListener('click', () => {
 });
 
 //включение валидации форм
-const config = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  input: 'popup__input',
-  submitButtonSelector: '.popup__button-submit',
-  inactiveButtonClass: 'popup__button-submit_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible',
-};
 
 const profileFormValidator = new FormValidator(config, formProfile);
 profileFormValidator.enableValidation();
