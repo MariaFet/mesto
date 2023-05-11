@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <title>Mesto Russia</title>
+    <!--<link rel="stylesheet" href="./pages/index.css">
+    <script src="./pages/index.js" defer type="module"></script>-->
   </head>
   <body class="page">
     <header class="header">
@@ -11,7 +13,9 @@
     </header>
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" alt="Аватар пользователя" src="<%=require('./images/kusto.png')%>">
+        <div class="profile__wrapper">
+          <img class="profile__avatar" alt="Аватар пользователя" src="<%=require('./images/kusto.png')%>">
+        </div>
         <div class="profile__info">
           <div class="profile__box">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -59,6 +63,24 @@
         <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
       </div>
     </section>
+    <section class="popup popup_type_avatar">
+      <div class="popup__container popup__container_type_add-avatar">
+        <h2 class="popup__title">Обновить аватар</h2>
+        <form class="popup__form popup__form_type_avatar" action="URL" method="get" name="popupForm" novalidate>
+          <input type="url" name="avatar" class="popup__input popup__input_type_avatar" placeholder="Ссылка на аватар" required>
+          <span class="popup__error popup__error_type_avatar"></span>
+          <button type="submit" class="popup__button-submit">Сохранить</button>
+        </form>
+        <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
+      </div>
+    </section>
+    <section class="popup popup_type_confirmation">
+      <div class="popup__container popup__container_type_confirmation">
+        <h2 class="popup__title">Вы уверены?</h2>
+        <button type="button" class="popup__button-submit">Да</button>
+        <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
+      </div>
+    </section>
     <footer class="footer">
       <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
     </footer>
@@ -67,7 +89,10 @@
         <img class="element__image" alt="" src="#">
         <div class="element__info">
           <h2 class="element__title"></h2>
-          <button class="element__button-like" type="button" aria-label="Лайк"></button>
+          <div class="element__like-container">
+            <button class="element__button-like" type="button" aria-label="Лайк"></button>
+            <p class="element__counter-like"></p>
+          </div>
           <button class="element__button-delete" type="button" aria-label="Удалить"></button>
         </div>
       </div>

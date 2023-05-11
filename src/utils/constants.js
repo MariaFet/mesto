@@ -42,3 +42,5 @@ export const config = {
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__error_visible',
 };
+export const addAvatarButton = document.querySelector('.profile__wrapper');
+export const formAvatar = document.querySelector('.popup__form_type_avatar');
