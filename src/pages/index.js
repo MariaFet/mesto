@@ -133,7 +133,10 @@ confirmationPopup.setEventListeners();
 const profileInfo = new UserInfo ( { userNameSelector: '.profile__name', userJobSelector: '.profile__job', userAvatarSelector: '.profile__avatar' });
 
 //кнопка добавления карточки
-addButton.addEventListener('click', () => {placePopup.open();});
+addButton.addEventListener('click', () => {
+  placePopup.open();
+  placeFormValidator.resetValidation();
+});
 
 //кнопка изменения профиля
 editButton.addEventListener('click', () => {
@@ -141,10 +144,14 @@ editButton.addEventListener('click', () => {
   nameInput.value = userData.name;
   jobInput.value = userData.job;
   profilePopup.open();
+  profileFormValidator.resetValidation();
 });
 
 //кнопка изменения аватара
-addAvatarButton.addEventListener('click', () => {avatarPopup.open()});
+addAvatarButton.addEventListener('click', () => {
+  avatarPopup.open();
+  avatarFormValidator.resetValidation();
+});
 
 //включение валидации форм
 const profileFormValidator = new FormValidator(config, formProfile);

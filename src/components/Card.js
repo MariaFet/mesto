@@ -31,6 +31,7 @@ export class Card {
     this._hideButtonDelete();
     this.setLikes(this._likes);
     this._checkOwner();
+    this.deleteLike();
     return this._cardElement;
   }
 
