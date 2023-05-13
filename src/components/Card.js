@@ -31,7 +31,7 @@ export class Card {
     this._hideButtonDelete();
     this.setLikes(this._likes);
     this._checkOwner();
-    this.deleteLike();
+
     return this._cardElement;
   }
 
@@ -51,7 +51,7 @@ export class Card {
   }
 
   _checkOwner() {
-    if(this.isLiked) {
+    if(this.isLiked()) {
       this.addLike();
     } else {
       this.deleteLike();
