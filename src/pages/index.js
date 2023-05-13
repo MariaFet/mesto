@@ -1,4 +1,4 @@
-//import './index.css';
+import './index.css';
 import {PopupWithConfirmation} from '../components/PopupWithConfirmation.js';
 import {Api} from '../components/Api.js';
 import {Card} from '../components/Card.js';
